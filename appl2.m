@@ -1,4 +1,4 @@
-%% applies MIR decomposition on exemplary RR-SAP time series
+%% applies MIR decomposition on exemplary climate time series
 %%% compares binning, permutation, knn and linear approaches
 clear; close all; clc;
 addpath([pwd '\..\functions\'])
@@ -36,6 +36,7 @@ load([pwd '\data\data2.mat']);
 Y=data_clima; % original series 
 
 M=size(Y,2); % number of series
+tau=3*ones(1,M); % embedding lag (for knn, bin & perm approaches)
 
 % preprocessing: high-pass filtering
 for im = 1:M
@@ -43,8 +44,6 @@ for im = 1:M
 end
 
 Y=zscore(Y); % normalization (not necessary for bin and perm)
-
-tau=ones(1,M); % embedding lag always unitary (for knn, bin & perm approaches)
 
 %% estimation of bivariate measures of coupling and causality (both original and surrogate data)
 for is=1:ns+1
@@ -132,26 +131,26 @@ b_I1o2_th=prctile(b_I1o2(2:end),100-alpha*100); % IT
 disp('Estimated values of MIR:');
 disp(['Lin YW: ', num2str(YW_I12(1)),' nats']);
 disp(['Knn: ', num2str(k_I12(1)),' nats']);
-disp(['Bin: ', num2str(b_I12(1)),' bits']);
-disp(['Perm: ', num2str(p_I12(1)),' bits']);
+disp(['Bin: ', num2str(b_I12(1)),' nats']);
+disp(['Perm: ', num2str(p_I12(1)),' nats']);
 disp(' ')
 disp('Estimated values of TE 1-->2:');
 disp(['Lin YW: ', num2str(YW_T1_2(1)),' nats']);
 disp(['Knn: ', num2str(k_T1_2(1)),' nats']);
-disp(['Bin: ', num2str(b_T1_2(1)),' bits']);
-disp(['Perm: ', num2str(p_T1_2(1)),' bits']);
+disp(['Bin: ', num2str(b_T1_2(1)),' nats']);
+disp(['Perm: ', num2str(p_T1_2(1)),' nats']);
 disp(' ')
 disp('Estimated values of TE 2-->1:');
 disp(['Lin YW: ', num2str(YW_T2_1(1)),' nats']);
 disp(['Knn: ', num2str(k_T2_1(1)),' nats']);
-disp(['Bin: ', num2str(b_T2_1(1)),' bits']);
-disp(['Perm: ', num2str(p_T2_1(1)),' bits']);
+disp(['Bin: ', num2str(b_T2_1(1)),' nats']);
+disp(['Perm: ', num2str(p_T2_1(1)),' nats']);
 disp(' ')
 disp('Estimated values of IC:');
 disp(['Lin YW: ', num2str(YW_I1o2(1)),' nats']);
 disp(['Knn: ', num2str(k_I1o2(1)),' nats']);
-disp(['Bin: ', num2str(b_I1o2(1)),' bits']);
-disp(['Perm: ', num2str(p_I1o2(1)),' bits']);
+disp(['Bin: ', num2str(b_I1o2(1)),' nats']);
+disp(['Perm: ', num2str(p_I1o2(1)),' nats']);
 
 %% plot results
 DimFont=18;
