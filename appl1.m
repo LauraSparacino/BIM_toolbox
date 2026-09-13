@@ -1,7 +1,7 @@
 %% applies MIR decomposition on exemplary RR-SAP time series
 %%% linear approach in the time and frequency domains
 clear; close all; clc;
-addpath([pwd '\..\functions\'])
+addpath([pwd '\functions\'])
 
 %%%% parameters
 
@@ -269,31 +269,4 @@ for imeas=1:size(o_meas,1)
 end
 clear meas
 
-% 3rd row: time domain distributions - KNN, PERM, BIN
-% o_meas{1,1}=k_I12(1); o_meas{2,1}=k_T1_2(1); o_meas{3,1}=k_T2_1(1); o_meas{4,1}=k_I1o2(1); % KNN
-% o_meas{1,2}=p_I12(1); o_meas{2,2}=p_T1_2(1); o_meas{3,2}=p_T2_1(1); o_meas{4,2}=p_I1o2(1); % PERM
-% o_meas{1,3}=b_I12(1); o_meas{2,3}=b_T1_2(1); o_meas{3,3}=b_T2_1(1); o_meas{4,3}=b_I1o2(1); % BIN
-% meas{1,1}=k_I12_th; meas{2,1}=k_I1_2_th; meas{3,1}=k_I2_1_th; meas{4,1}=k_I1o2_th; % KNN
-% meas{1,2}=p_I12_th; meas{2,2}=p_I1_2_th; meas{3,2}=p_I2_1_th; meas{4,2}=p_I1o2_th; % PERM
-% meas{1,3}=b_I12_th; meas{2,3}=b_I1_2_th; meas{3,3}=b_I2_1_th; meas{4,3}=b_I1o2_th; % BIN
-% for imeas=1:size(o_meas,1)
-%     subplot(3,4,8+imeas)
-%     for imethod=1:3
-%         if o_meas{imeas,imethod} > meas{imeas,imethod}
-%             bar(x{imethod},o_meas{imeas,imethod},'EdgeColor',[0 0 0],'FaceColor',[0 0 0]); hold on;
-%         else
-%             bar(x{imethod},o_meas{imeas,imethod},'EdgeColor',[0 0 0],'FaceColor',[0.8 0.8 0.8]); hold on;
-%         end
-%     end
-%     xlim([x{1}-1 x{3}+1]);
-%     ylim([0 o_meas{1,2}+0.1])
-%     xticks([x{1} x{2} x{3}]);
-%     xticklabels({'KNN','PERM','BIN'});
-%     if imeas==1
-%         ylabel('[nats]')
-%     end
-% end
-
-exportgraphics(gcf,[pwd '\..\figures\appl1_raw.pdf'],...
-            'Resolution',600,'ContentType','vector');
 

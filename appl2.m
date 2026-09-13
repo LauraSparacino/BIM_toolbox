@@ -1,7 +1,7 @@
 %% applies MIR decomposition on exemplary climate time series
 %%% compares binning, permutation, knn and linear approaches
 clear; close all; clc;
-addpath([pwd '\..\functions\'])
+addpath([pwd '\functions\'])
 
 %%%% parameters
 
@@ -189,7 +189,3 @@ for imeas=1:size(o_meas,1)
     title(tit{imeas})
     pbaspect([1 1 1])
 end
-
-exportgraphics(gcf,[pwd '\..\figures\appl2_raw.pdf'],...
-            'Resolution',600,'ContentType','vector');
-        
