@@ -1,5 +1,3 @@
-Quantifying Coupling And Causality In Bivariate Systems: A Unified Framework for Time, Frequency, and Information-Theoretic Analysis
-
 Understanding the underlying dynamics of complex real-world systems, such as neurophysiological and climate systems, requires quantifying their bivariate functional interactions under different scenarios.
 This didactic review offers a comprehensive introduction to time, frequency and information-theoretic domain measures for assessing the interdependence between pairs of time series describing the dynamical activities of physical systems, supporting flexible and robust analyses of statistical dependencies and directional relationships.
 Classical time and frequency domain correlation-based measures, as well as directional approaches derived from the notion of Granger causality, are introduced and discussed, alongside information-theoretic measures of symmetrical and directional coupling.
