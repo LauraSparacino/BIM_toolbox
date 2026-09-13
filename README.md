@@ -1,5 +1,8 @@
+# **BIM\_toolbox**
+
 Understanding the underlying dynamics of complex real-world systems, such as neurophysiological and climate systems, requires quantifying their bivariate functional interactions under different scenarios.
 This didactic review offers a comprehensive introduction to time, frequency and information-theoretic domain measures for assessing the interdependence between pairs of time series describing the dynamical activities of physical systems, supporting flexible and robust analyses of statistical dependencies and directional relationships.
 Classical time and frequency domain correlation-based measures, as well as directional approaches derived from the notion of Granger causality, are introduced and discussed, alongside information-theoretic measures of symmetrical and directional coupling.
 Both linear model-based and fully model-free estimation approaches are thoroughly described, the latter including binning, permutation, and nearest-neighbour estimators. Special emphasis is placed on the description of a unified framework that establishes a connection between spectral and information-theoretic measures under the assumptions of joint Gaussianity and linearity. This framework enables the frequency-specific representation of information-theoretic metrics, allowing for a detailed investigation of oscillatory components in bivariate systems.
 The practical computation of the interaction measures is favoured by presenting a toolbox and two exemplary applications to cardiovascular and climate data. By bridging theoretical concepts with practical tools, this work enables researchers to effectively investigate a wide range of dynamical behaviours in various real-world environments.
+
